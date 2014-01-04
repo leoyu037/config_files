@@ -1,0 +1,32 @@
+# Some variables that make it easy to do things in color
+blk="\[\033[0;30m\]"
+red="\[\033[0;31m\]"
+grn="\[\033[0;32m\]"
+ylw="\[\033[0;33m\]"
+blu="\[\033[0;34m\]"
+mag="\[\033[0;35m\]"
+cyn="\[\033[0;36m\]"
+wht="\[\033[0;37m\]"
+
+bldblk="\[\033[1;30m\]"
+bldred="\[\033[1;31m\]"
+bldgrn="\[\033[1;32m\]"
+blbylw="\[\033[1;33m\]"
+bldblu="\[\033[1;34m\]"
+bldmag="\[\033[1;35m\]"
+bldcyn="\[\033[1;36m\]"
+bldwht="\[\033[1;37m\]"
+
+NOCOLOR="\[\033[0m\]"
+BLACK="\[\033[30;47m\]"
+RED2="\[\033[31;47m\]"
+BLUE2="\[\033[34;47m\]"
+MAGENTA="\[\033[35;47m\]"
+CYAN="\[\033[36;47m\]"
+WHITE2="\[\033[37;47m\]"
+
+cynbg="\[\e[37;46m\]"
+
+PS1="${cyn}\h${wht} ${red}:: ${NOCOLOR}\d ${wht}\@${wht} ${red}:: ${ylw}\w \n${grn}\u $ ${NOCOLOR}"
+SUDO_PS1=$PS1
+export PS1 SUDO_PS1
