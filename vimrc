@@ -27,19 +27,34 @@ set t_Co=256          " Use 256 colors
 set background=dark
 au ColorScheme * hi ExtraWhitespace ctermbg=Red guibg=Red
 colorscheme solarized
-set wrap              " Wrap lines
-set scrolloff=7       " Offset of cursor when scrolling
-  " Line numbers
-set number            " Show line numbers
-set numberwidth=4     " Use four characters
-  " Status/command bar
-set laststatus=2      " Always have status bar
-set cmdheight=1       " Height of command bar
-set ruler             " Display cursor position
+call togglebg#map("<F5>") " toggle bg color
+set scrolloff=7           " Offset of cursor when scrolling
+" Line numbers
+set number                " Show line numbers
+set numberwidth=4         " Use four characters
+" Status/command bar
+set laststatus=2          " Always have status bar
+set cmdheight=1           " Height of command bar
+set ruler                 " Display cursor position
 set statusline=\ %{HasPaste()}%F%(\ [%M%R%H%W]%)\ \ Line:\ %l\.%v
-hi statusline ctermbg=Black ctermfg=DarkGreen
-au InsertEnter * hi statusline ctermbg=White ctermfg=Red
-au InsertLeave * hi statusline ctermbg=Black ctermfg=DarkGreen
+hi statusline ctermbg=DarkGreen ctermfg=White guibg=#859900 guifg=White
+au InsertEnter * hi statusline ctermbg=Red ctermfg=White guibg=#cb4b16 guifg=White
+au InsertLeave * hi statusline ctermbg=DarkGreen ctermfg=White guibg=#859900 guifg=White
+" Fonts
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  endif
+endif
+" GUI Options
+" :set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=r  "remove right-hand scroll bar
+:set guioptions-=L  "remove left-hand scroll bar
 
 " Search
 set hlsearch   " Highlight search results
@@ -62,9 +77,13 @@ set backspace=eol,start,indent            " Fixes backspace in insert mode
 " noremap j 3j                              " Jump by 5 lines instead of 1
 " noremap k 5k
 set formatoptions-=o                      " Dont continue comments when pushing o/O
-noremap <leader>p :setlocal paste!<cr>        " Paste mode toggle
+noremap <leader>p :setlocal paste!<cr>    " Paste mode toggle
 noremap <leader>w :set wrap!<cr>          " Word wrap toggle
 noremap <leader>m :call ToggleMouse()<cr> " Mouse toggle
+nnoremap <c-j> <c-w>j " Navigate panes easier
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Vertical split help
 command -nargs=* -complete=help Help vertical belowright help <args>
@@ -72,15 +91,20 @@ cnoremap help Help
 
 " Miscellaneous
 set whichwrap+=<,>,h,l,[,] " Cursor wraps to next line
-  " Linebreak on 500 characters
+" Linebreak on 500 characters
 set lbr
-set tw=500
+set textwidth=0
+" set wrap " Wrap lines
+
+" Backups/swapfiles
+set backupdir=~/_tmp
+set dir=~/_tmp
 
 " Match trailing whitespace as an error
 au BufWinEnter * match ExtraWhitespace /\s\+$/
 
 " Helper Functions
-  " Returns true if paste mode is enabled
+" Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
         return 'PASTE MODE  '
@@ -97,6 +121,4 @@ function! ToggleMouse()
     echo "Mouse usage enabled"
   endif
 endfunction
-
-
 
