@@ -21,13 +21,13 @@ fi
 ##############################################################################
 
 alias ls='ls -lhG'
+alias tmux='tmux -2'
 
 # Application aliases
 alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
 
 # Java aliases
 alias javaclean='rm *.class'
-
 
 # CERN and ROOT aliases
 alias cern='ssh -Y lyu@lxplus5.cern.ch'
