@@ -37,9 +37,9 @@ set laststatus=2          " Always have status bar
 set cmdheight=1           " Height of command bar
 set ruler                 " Display cursor position
 set statusline=\ %{HasPaste()}%F%(\ [%M%R%H%W]%)\ \ Line:\ %l\.%v
-hi statusline ctermbg=DarkGreen ctermfg=White guibg=#859900 guifg=White
-au InsertEnter * hi statusline ctermbg=Red ctermfg=White guibg=#cb4b16 guifg=White
-au InsertLeave * hi statusline ctermbg=DarkGreen ctermfg=White guibg=#859900 guifg=White
+hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
+au InsertEnter * hi statusline ctermbg=White ctermfg=Red guibg=#cb4b16 guifg=White
+au InsertLeave * hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
 " Fonts
 if has("gui_running")
   if has("gui_gtk2")
@@ -97,8 +97,8 @@ set textwidth=0
 " set wrap " Wrap lines
 
 " Backups/swapfiles
-set backupdir=~/_tmp
-set dir=~/_tmp
+set backupdir=~/.tmp
+set dir=~/.tmp
 
 " Match trailing whitespace as an error
 au BufWinEnter * match ExtraWhitespace /\s\+$/
