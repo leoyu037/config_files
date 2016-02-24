@@ -94,7 +94,7 @@ set whichwrap+=<,>,h,l,[,] " Cursor wraps to next line
 " Linebreak on 500 characters
 set lbr
 set textwidth=0
-" set wrap " Wrap lines
+set clipboard=unnamed " yank and paste with y and p from Vim
 
 " Backups/swapfiles
 set backupdir=~/.tmp
