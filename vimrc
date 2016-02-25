@@ -80,10 +80,11 @@ set formatoptions-=o                      " Dont continue comments when pushing 
 noremap <leader>p :setlocal paste!<cr>    " Paste mode toggle
 noremap <leader>w :set wrap!<cr>          " Word wrap toggle
 noremap <leader>m :call ToggleMouse()<cr> " Mouse toggle
-nnoremap <c-j> <c-w>j " Navigate panes easier
+nnoremap <c-j> <c-w>j                     " Navigate panes easier
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+vmap <leader>y "+y                        " Easy copy to system clipboard
 
 " Vertical split help
 command -nargs=* -complete=help Help vertical belowright help <args>
