@@ -1,6 +1,7 @@
 BoldAsFont=no
 Transparency=off
 OpaqueWhenFocused=yes
+Scrollbar=0
 ForegroundColour=131,148,150
 BackgroundColour=0,43,54
 CursorColour=220,50,47
@@ -24,3 +25,6 @@ Font=Consolas
 FontHeight=10
 AllowBlinking=yes
 CursorType=block
+Columns=132
+Rows=69
+Term=xterm-256color
