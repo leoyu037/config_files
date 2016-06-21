@@ -22,6 +22,9 @@ alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -lhG --group-directories-first"
 
+# Python
+alias pypath="export PYTHONPATH=\`pwd\`"
+
 ##############################################################################
 #
 #				FUNCTIONS

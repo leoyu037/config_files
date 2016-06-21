@@ -1,7 +1,17 @@
 [alias]
-lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-st = status
+  br = branch
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  st = status
+
+[core]
+  editor = vim
+
 [credential]
-	helper = cache --timeout=3600
+  helper = cache --timeout=3600
+
 [user]
-	name = Leo Yu
+  name = Leo Yu
+
+[push]
+  default = simple
