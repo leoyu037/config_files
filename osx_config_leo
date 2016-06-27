@@ -1,0 +1,34 @@
+##############################################################################
+#
+#				ALIASES
+#
+##############################################################################
+
+# Application aliases
+alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
+
+##############################################################################
+#
+#				FUNCTIONS
+#
+##############################################################################
+
+# Finder functions
+function showhiddenfiles()
+{
+	defaults write com.apple.finder AppleShowAllFiles YES
+	killall -HUP Finder
+}
+
+function hidehiddenfiles()
+{
+	defaults write com.apple.finder AppleShowAllFiles NO
+	killall -HUP Finder
+}
+
+# Android functions
+function androidinit()
+{
+  export PATH=$PATH:~/Programming/Android/adt-bundle-mac-x86_64-20131030/sdk/platform-tools
+  echo 'Android platform tools added to PATH'
+}
