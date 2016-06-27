@@ -42,10 +42,10 @@ alias pypath="export PYTHONPATH=\`pwd\`"
 ##############################################################################
 
 # Load OSX config
-[ -f ~/.osx_config_leo ] && source ${HOME}/.osx_config_leo
+[ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
 
 # Load CERN/CMS config
-[ -f ~/.cms_config_leo ] && source ${HOME}/.cms_config_leo
+[ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo
 
 # Load JW Player config
-[ -f ~/.jw_config_leo ] && source ${HOME}/.jw_config_leo
+[ -f ~/.jw_config_leo ] && echo "Loading JW config" && source ${HOME}/.jw_config_leo
