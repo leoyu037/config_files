@@ -3,6 +3,7 @@
 #				Oh My Zsh!
 #
 ##############################################################################
+
 export ZSH=$HOME/.oh-my-zsh
 export UPDATE_ZSH_DAYS=14
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 #				ALIASES
 #
 ##############################################################################
+
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -lhG --group-directories-first"
@@ -33,6 +35,7 @@ alias doserver='ssh root@45.55.170.64'
 #				FUNCTIONS
 #
 ##############################################################################
+
 function collapse_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
@@ -40,6 +43,18 @@ function collapse_pwd {
 # Prompt
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}
   %{$fg_bold[red]%}➜%{$reset_color%}  '
+
+##############################################################################
+#
+#				LOAD CONFIGS
+#
+##############################################################################
+
+# Load OSX config
+[ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
+
+# Load CERN/CMS config
+[ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo
 
 # Load JW Player config
 [ -f ~/.jw_config_leo ] && source ${HOME}/.jw_config_leo
