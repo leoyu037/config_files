@@ -29,6 +29,9 @@ alias javaclean='rm *.class'
 # Python aliases
 alias pypath="export PYTHONPATH=\`pwd\`"
 
+# Digital Ocean server
+alias doserver='ssh root@45.55.170.64'
+
 ##############################################################################
 #
 #				FUNCTIONS
