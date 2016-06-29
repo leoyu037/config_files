@@ -20,7 +20,7 @@ source $ZSH/oh-my-zsh.sh
 ##############################################################################
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="ls -lhG --group-directories-first"
+alias ls="ls -lhGp --group-directories-first"
 
 # Python
 alias pypath="export PYTHONPATH=\`pwd\`"
