@@ -3,12 +3,16 @@
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
   st = status
+  gr = grep --heading -p
+
+[credential]
+  helper = cache --timeout=3600
 
 [core]
   editor = vim
 
-[credential]
-  helper = cache --timeout=3600
+[grep]
+  lineNumber = true
 
 [user]
   name = Leo Yu
