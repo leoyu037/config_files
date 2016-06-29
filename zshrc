@@ -25,6 +25,9 @@ alias ls="ls -lhG --group-directories-first"
 # Python
 alias pypath="export PYTHONPATH=\`pwd\`"
 
+# Digital Ocean Server
+alias doserver='ssh root@45.55.170.64'
+
 ##############################################################################
 #
 #				FUNCTIONS
