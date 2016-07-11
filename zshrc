@@ -57,4 +57,4 @@ PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} 
 [ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo
 
 # Load JW Player config
-[ -f ~/.jw_config_leo ] && source ${HOME}/.jw_config_leo
+[ -f ~/.jw_config_leo ] && echo "Loading JW Config" && source ${HOME}/.jw_config_leo
