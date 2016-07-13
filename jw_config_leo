@@ -1,1 +1,19 @@
+##############################################################################
+#
+#				ENVIRONMENT VARS
+#
+##############################################################################
+
+
+export AWS_ACCESS_KEY_ID=PUT_KEY_HERE
+export AWS_SECRET_ACCESS_KEY=PUT_KEY_HERE
+
+##############################################################################
+#
+#				ALIASES
+#
+##############################################################################
+
+alias docker-cc="docker rm $(docker ps -aq -f status=exited)"
+alias docker-cc-all="docker rm `docker ps --no-trunc -aq`"
 alias startLuigi=". /opt/ltv/analytics/master/mario/server/luigid.sh"
