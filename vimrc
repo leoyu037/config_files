@@ -73,18 +73,18 @@ set autoindent
 set smartindent  " I dunno the difference between this and smarttab
 
 " Key remapping
-set backspace=eol,start,indent            " Fixes backspace in insert mode
-" noremap j 3j                              " Jump by 5 lines instead of 1
+set backspace=eol,start,indent               " Fixes backspace in insert mode
+" noremap j 3j                                 " Jump by 5 lines instead of 1
 " noremap k 5k
-set formatoptions-=o                      " Dont continue comments when pushing o/O
-noremap <leader>p :setlocal paste!<cr>    " Paste mode toggle
-noremap <leader>w :set wrap!<cr>          " Word wrap toggle
-noremap <leader>m :call ToggleMouse()<cr> " Mouse toggle
-nnoremap <c-j> <c-w>j                     " Navigate panes easier
+noremap <leader>m :call ToggleMouse()<cr>    " Mouse toggle
+noremap <leader>p :setlocal paste!<cr>       " Paste mode toggle
+noremap <leader>w :set wrap!<cr>             " Word wrap toggle
+noremap <leader>t :call ToggleTextWrap()<cr> " Word wrap toggle
+nnoremap <c-j> <c-w>j                        " Navigate panes easier
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-vmap <leader>y "+y                        " Easy copy to system clipboard
+vmap <leader>y "+y                           " Easy copy to system clipboard
 
 " Vertical split help
 command -nargs=* -complete=help Help vertical belowright help <args>
@@ -94,7 +94,8 @@ cnoremap help Help
 set whichwrap+=<,>,h,l,[,] " Cursor wraps to next line
 " Linebreak on 500 characters
 set lbr
-set textwidth=0
+set textwidth=79
+set formatoptions-=o  " Dont continue comments when pushing o/O
 set clipboard=unnamed " yank and paste with y and p from Vim
 
 " Backups/swapfiles
@@ -120,6 +121,16 @@ function! ToggleMouse()
   else
     set mouse=a
     echo "Mouse usage enabled"
+  endif
+endfunction
+
+function! ToggleTextWrap()
+  if &textwidth == 0
+    set textwidth=79
+    echo "Text wrap enabled"
+  else
+    set textwidth=0
+    echo "Text wrap disabled"
   endif
 endfunction
 
