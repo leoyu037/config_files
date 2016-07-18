@@ -43,7 +43,7 @@ function collapse_pwd {
 # Prompt
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
 PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}
-  %{$fg_bold[red]%}➜%{$reset_color%} $(git_prompt_info) ${ret_status} '
+  $(git_prompt_info)%{$fg_bold[red]%}➜%{$reset_color%}  '
 
 ##############################################################################
 #
