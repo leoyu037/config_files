@@ -13,6 +13,7 @@ export AWS_SECRET_ACCESS_KEY=PUT_KEY_HERE
 #
 ##############################################################################
 
-alias docker-cc="docker rm $(docker ps -aq -f status=exited)"
-alias docker-cc-all="docker rm `docker ps --no-trunc -aq`"
+# alias docker-cc="docker rm $(docker ps -aq -f status=exited)"
+# alias docker-cc-all="docker rm `docker ps --no-trunc -aq`"
 alias startLuigi=". /opt/ltv/analytics/master/mario/server/luigid.sh"
+alias rmHosts="mv ~/.ssh/known_hosts ~/.ssh/known_hosts.backup"
