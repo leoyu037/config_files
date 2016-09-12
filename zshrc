@@ -23,6 +23,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls="ls -lhGp --group-directories-first"
+alias findn="find . -name"
+alias resethosts="mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak"
 
 # Python
 alias pypath="export PYTHONPATH=\`pwd\`"
