@@ -13,7 +13,7 @@ export AWS_SECRET_ACCESS_KEY=PUT_KEY_HERE
 #
 ##############################################################################
 
-# alias docker-cc="docker rm $(docker ps -aq -f status=exited)"
-# alias docker-cc-all="docker rm `docker ps --no-trunc -aq`"
 alias startLuigi=". /opt/ltv/analytics/master/mario/server/luigid.sh"
 alias rmHosts="mv ~/.ssh/known_hosts ~/.ssh/known_hosts.backup"
+
+alias start_jenkins='docker run -p 8080:8080 -p 50000:50000 -v $HOME/jenkinshome:/var/jenkins_home jenkins:alpine'
