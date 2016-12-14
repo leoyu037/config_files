@@ -31,6 +31,7 @@ call togglebg#map("<F5>") " toggle bg color
 set scrolloff=7           " Offset of cursor when scrolling
 " Line numbers
 set number                " Show line numbers
+set relativenumber        " Relative line numbering
 set numberwidth=4         " Use four characters
 " Status/command bar
 set laststatus=2          " Always have status bar
@@ -79,6 +80,7 @@ set backspace=eol,start,indent               " Fixes backspace in insert mode
 noremap <leader>m :call ToggleMouse()<cr>    " Mouse toggle
 noremap <leader>p :setlocal paste!<cr>       " Paste mode toggle
 noremap <leader>w :set wrap!<cr>             " Word wrap toggle
+noremap <leader>n :set relativenumber!<cr>   " Relative line numbering toggle
 noremap <leader>t :call ToggleTextWrap()<cr> " Word wrap toggle
 nnoremap <c-j> <c-w>j                        " Navigate panes easier
 nnoremap <c-k> <c-w>k

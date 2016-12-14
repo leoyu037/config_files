@@ -22,9 +22,11 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias findfile="find . -name"
 alias ls="ls -lhGp --group-directories-first" # Linux
 # alias ls="ls -lhGp" # OSX
-alias findfile="find . -name"
+alias reload=". ~/.zshrc"
 alias resethosts="mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak"
 
 # Python
@@ -39,12 +41,16 @@ alias doserver='ssh root@45.55.170.64'
 #
 ##############################################################################
 
+function docker_bash {
+    docker run -it $1 /bin/bash
+}
+
 function collapse_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
 }
 
 function findinfile {
-if [[ ($# -lt 1) || ($1 = '-h') ]]; then
+    if [[ ($# -lt 1) || ($1 = '-h') ]]; then
       echo 'usage: findinfile [-h]|[<file_pattern> <target_string>]'
     else
       grep --include=$1 -rn . -e $2
