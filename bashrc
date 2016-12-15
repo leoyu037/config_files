@@ -71,3 +71,5 @@ echo 9
 
 # Load JW Player config
 [ -f ~/.jw_config_leo ] && echo "Loading JW config" && source ${HOME}/.jw_config_leo
+
+echo 10
