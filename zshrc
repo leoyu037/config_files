@@ -41,8 +41,15 @@ alias doserver='ssh root@45.55.170.64'
 #
 ##############################################################################
 
+# Start new instance of docker image, running bash instead of default
+# entrypoint
 function docker_bash {
     docker run -it $1 /bin/bash
+}
+
+# Activate virtualenv
+function venv {
+    . $1/bin/activate
 }
 
 function collapse_pwd {
