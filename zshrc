@@ -10,9 +10,15 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
-plugins=(git)
+plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
+
+##############################################################################
+#
+#				ENVIRONMENTAL VARIABLES
+#
+##############################################################################
 
 ##############################################################################
 #
@@ -22,18 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="mate ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias findfile="find . -name"
-alias ls="ls -lhGp --group-directories-first" # Linux
-# alias ls="ls -lhGp" # OSX
 alias reload=". ~/.zshrc"
-alias resethosts="mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak"
-
-# Python
-alias pypath="export PYTHONPATH=\`pwd\`"
-
-# Digital Ocean Server
-alias doserver='ssh root@45.55.170.64'
 
 ##############################################################################
 #
@@ -41,27 +36,8 @@ alias doserver='ssh root@45.55.170.64'
 #
 ##############################################################################
 
-# Start new instance of docker image, running bash instead of default
-# entrypoint
-function docker_bash {
-    docker run -it $1 /bin/bash
-}
-
-# Activate virtualenv
-function venv {
-    . $1/bin/activate
-}
-
 function collapse_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
-}
-
-function findinfile {
-    if [[ ($# -lt 1) || ($1 = '-h') ]]; then
-      echo 'usage: findinfile [-h]|[<file_pattern> <target_string>]'
-    else
-      grep --include=$1 -rn . -e $2
-    fi
 }
 
 # Prompt
@@ -75,11 +51,5 @@ PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} 
 #
 ##############################################################################
 
-# Load OSX config
-[ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
-
-# Load CERN/CMS config
-[ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo
-
-# Load JW Player config
-[ -f ~/.jw_config_leo ] && echo "Loading JW Config" && source ${HOME}/.jw_config_leo
+# Load common config
+[ -f ~/.commonrc ] && echo "Loading common config" && source ${HOME}/.commonrc

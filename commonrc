@@ -1,0 +1,79 @@
+#!/bin/zsh
+# Config common to both bashrc and zshrc
+
+##############################################################################
+#
+#				ENVIRONMENTAL VARIABLES
+#
+##############################################################################
+
+##############################################################################
+#
+#				ALIASES
+#
+##############################################################################
+
+# General
+alias findfile='find . -name'
+alias ls='ls -lhGp --group-directories-first' # Linux
+# alias ls='ls -lhGp' # OSX
+alias resethosts='mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak'
+alias tmux='tmux -2'
+
+# Digital Ocean Server
+alias doserver='ssh root@45.55.170.64'
+
+# Docker
+alias dockerclean="docker rm $(docker ps -a -q)"
+
+# Java
+alias javaclean='rm *.class'
+
+# Python
+alias pypath="export PYTHONPATH=$(pwd)"
+alias pyclean='rm -rf *.pyc __pycache__/'
+
+##############################################################################
+#
+#				FUNCTIONS
+#
+##############################################################################
+
+##### General
+
+function findinfile {
+    if [[ ($# -lt 1) || ($1 = '-h') ]]; then
+      echo 'usage: findinfile [-h]|[<file_pattern> <target_string>]'
+    else
+      grep --include=$1 -rn . -e $2
+    fi
+}
+
+##### Docker
+
+# Start new instance of docker image, running bash instead of default entrypoint
+function docker_bash {
+    docker run -it $1 /bin/bash
+}
+
+##### Python
+
+# Activate virtualenv
+function venv {
+    . $1/bin/activate
+}
+
+##############################################################################
+#
+#				LOAD CONFIGS
+#
+##############################################################################
+
+# Load OSX config
+[ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
+
+# Load CERN/CMS config
+[ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo
+
+# Load JW Player config
+[ -f ~/.jw_config_leo ] && echo "Loading JW Config" && source ${HOME}/.jw_config_leo
