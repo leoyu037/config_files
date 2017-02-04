@@ -24,7 +24,7 @@ alias tmux='tmux -2'
 alias doserver='ssh root@45.55.170.64'
 
 # Docker
-alias dockerclean="docker rm $(docker ps -a -q)"
+alias dockerclean="docker rm `docker ps -aq`"
 
 # Java
 alias javaclean='rm *.class'
@@ -53,7 +53,12 @@ function findinfile {
 
 # Start new instance of docker image, running bash instead of default entrypoint
 function docker_bash {
-    docker run -it $1 /bin/bash
+    docker run -it --rm $1 /bin/bash
+}
+
+# Start shell in existing docker container
+function docker_attach {
+    docker exec -it $1 /bin/bash
 }
 
 ##### Python
