@@ -24,13 +24,13 @@ alias tmux='tmux -2'
 alias doserver='ssh root@45.55.170.64'
 
 # Docker
-alias dockerclean="docker rm `docker ps -aq`"
+alias dockerclean='docker rm $(docker ps -aq)'
 
 # Java
 alias javaclean='rm *.class'
 
 # Python
-alias pypath="export PYTHONPATH=$(pwd)"
+alias pypath='export PYTHONPATH=$(pwd)'
 alias pyclean='rm -rf *.pyc __pycache__/'
 
 ##############################################################################
