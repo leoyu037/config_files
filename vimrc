@@ -104,13 +104,16 @@ set lbr
 set textwidth=79
 set formatoptions-=o  " Dont continue comments when pushing o/O
 set clipboard=unnamed " yank and paste with y and p from Vim
+set splitbelow
+set splitright
 
 " Backups/swapfiles
 set backupdir=~/.tmp
 set dir=~/.tmp
 
-" Match trailing whitespace as an error
+" Trailing Whitespace
 au BufWinEnter * match ExtraWhitespace /\s\+$/
+nnoremap <silent> <F6> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Helper Functions
 " Returns true if paste mode is enabled
