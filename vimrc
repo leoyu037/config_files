@@ -29,11 +29,11 @@ au ColorScheme * hi ExtraWhitespace ctermbg=Red guibg=Red
 colorscheme solarized
 call togglebg#map("<F5>") " toggle bg color
 set scrolloff=7           " Offset of cursor when scrolling
-" Line numbers
+"   Line numbers
 set number                " Show line numbers
 set relativenumber        " Relative line numbering
 set numberwidth=4         " Use four characters
-" Status/command bar
+"   Status/command bar
 set laststatus=2          " Always have status bar
 set cmdheight=1           " Height of command bar
 set ruler                 " Display cursor position
@@ -41,7 +41,7 @@ set statusline=\ %{HasPaste()}%F%(\ [%M%R%H%W]%)\ \ Line:\ %l\.%v
 hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
 au InsertEnter * hi statusline ctermbg=White ctermfg=Red guibg=#cb4b16 guifg=White
 au InsertLeave * hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
-" Fonts
+"   Fonts
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
@@ -51,7 +51,7 @@ if has("gui_running")
     set guifont=Consolas:h10:cANSI
   endif
 endif
-" GUI Options
+"   GUI Options
 " :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
@@ -73,15 +73,20 @@ set smarttab     " Smart tabbing
 set autoindent
 set smartindent  " I dunno the difference between this and smarttab
 
+" Code folding
+set foldmethod=indent
+set foldlevel=99
+
 " Key remapping
 set backspace=eol,start,indent               " Fixes backspace in insert mode
 " noremap j 3j                                 " Jump by 5 lines instead of 1
 " noremap k 5k
 noremap <leader>m :call ToggleMouse()<cr>    " Mouse toggle
 noremap <leader>p :setlocal paste!<cr>       " Paste mode toggle
-noremap <leader>w :set wrap!<cr>             " Word wrap toggle
 noremap <leader>n :set relativenumber!<cr>   " Relative line numbering toggle
-noremap <leader>t :call ToggleTextWrap()<cr> " Word wrap toggle
+noremap <leader>t :call ToggleTextWrap()<cr> " Text wrap toggle
+noremap <leader>w :set wrap!<cr>             " Word wrap toggle
+nnoremap <leader><leader> za                 " Enable code folding
 nnoremap <c-j> <c-w>j                        " Navigate panes easier
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -99,13 +104,16 @@ set lbr
 set textwidth=79
 set formatoptions-=o  " Dont continue comments when pushing o/O
 set clipboard=unnamed " yank and paste with y and p from Vim
+set splitbelow
+set splitright
 
 " Backups/swapfiles
 set backupdir=~/.tmp
 set dir=~/.tmp
 
-" Match trailing whitespace as an error
+" Trailing Whitespace
 au BufWinEnter * match ExtraWhitespace /\s\+$/
+nnoremap <silent> <F6> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " Helper Functions
 " Returns true if paste mode is enabled
