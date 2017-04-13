@@ -2,9 +2,45 @@
 " first, because it changes other options as a side effect.
 set nocompatible
 
-filetype on
-filetype plugin on
-filetype indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle Config
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Required for Vundle
+filetype off
+
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" Plugin 'git://git.wincent.com/command-t.git'
+" Plugin 'vim-airline/vim-airline'								" Better statusbar
+" Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching
+" Plugin 'python-mode/python-mode'								" Python mode
+Plugin 'scrooloose/nerdtree'										" File browsing
+" Plugin 'scrooloose/syntastic'										" Syntax highlighting
+" Plugin 'tpope/vim-fugitive' 										" Git integration
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" To ignore plugin indent changes, instead use:
+" filetype plugin on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = ' '
 
@@ -27,7 +63,7 @@ set t_Co=256          " Use 256 colors
 set background=dark
 au ColorScheme * hi ExtraWhitespace ctermbg=Red guibg=Red
 colorscheme solarized
-call togglebg#map("<F5>") " toggle bg color
+call togglebg#map("<F5>") " Toggle bg color
 set scrolloff=7           " Offset of cursor when scrolling
 "   Line numbers
 set number                " Show line numbers
@@ -110,6 +146,9 @@ set splitright
 " Backups/swapfiles
 set backupdir=~/.tmp
 set dir=~/.tmp
+
+" Resize splits when the window is resized
+au VimResized * :wincmd =
 
 " Trailing Whitespace
 au BufWinEnter * match ExtraWhitespace /\s\+$/
