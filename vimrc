@@ -28,7 +28,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'vim-airline/vim-airline'								" Better statusbar
 " Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching
-" Plugin 'python-mode/python-mode'								" Python mode
+Plugin 'python-mode/python-mode'								" Python mode
 Plugin 'scrooloose/nerdtree'										" File browsing
 " Plugin 'scrooloose/syntastic'										" Syntax highlighting
 " Plugin 'tpope/vim-fugitive' 										" Git integration
@@ -41,6 +41,10 @@ filetype plugin indent on    " required
 " filetype plugin on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" PythonMode plugin
+let g:pymode_rope = 0
+let g:pymode_folding = 0
 
 let mapleader = ' '
 
@@ -67,7 +71,6 @@ call togglebg#map("<F5>") " Toggle bg color
 set scrolloff=7           " Offset of cursor when scrolling
 "   Line numbers
 set number                " Show line numbers
-set relativenumber        " Relative line numbering
 set numberwidth=4         " Use four characters
 "   Status/command bar
 set laststatus=2          " Always have status bar
