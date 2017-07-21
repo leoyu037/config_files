@@ -2,6 +2,8 @@
 " first, because it changes other options as a side effect.
 set nocompatible
 
+let mapleader = ' '
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vundle Config
 "
@@ -45,8 +47,7 @@ filetype plugin indent on    " required
 " PythonMode plugin
 let g:pymode_rope = 0
 let g:pymode_folding = 0
-
-let mapleader = ' '
+noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 
 " General
 set wildmode=longest,full " Use normal, bash-like tab completion for commands

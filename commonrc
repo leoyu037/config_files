@@ -24,7 +24,8 @@ alias tmux='tmux -2'
 alias doserver='ssh root@45.55.170.64'
 
 # Docker
-alias dockerclean='docker rm $(docker ps -aq)'
+alias dockerclean='docker rm `docker ps -aq`'
+alias dockercleanimages='docker rmi `docker images | grep "<none>" | awk "{print $3}"`'
 
 # Java
 alias javaclean='rm *.class'
@@ -72,6 +73,13 @@ function venv {
 function nvenv {
     echo Creating/activating new virtualenv $1
     virtualenv $1
+    venv $1
+}
+
+# New virtualenv
+function nvenv3 {
+    echo Creating/activating new virtualenv $1
+    virtualenv -p python3 $1
     venv $1
 }
 
