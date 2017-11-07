@@ -11,6 +11,9 @@ export NVM_DIR="$HOME/.nvm"
 # Application aliases
 alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
 
+# Use Exuberant CTags instead of default
+alias ctags='`brew --prefix`/bin/ctags'
+
 ##############################################################################
 #
 #				FUNCTIONS
