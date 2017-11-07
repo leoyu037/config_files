@@ -32,7 +32,6 @@ alias javaclean='rm *.class'
 
 # Python
 alias pypath='export PYTHONPATH=$(pwd)'
-alias pyclean='rm -rf *.pyc __pycache__/'
 
 ##############################################################################
 #
@@ -63,6 +62,11 @@ function docker_attach {
 }
 
 ##### Python
+
+function pyclean {
+  find $1 -name "*.pyc" | xargs rm
+  find . -name "__pycache__" | xargs rmdir
+}
 
 # Activate virtualenv
 function venv {

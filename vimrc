@@ -5,8 +5,13 @@ set nocompatible
 let mapleader = ' '
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle Config
 "
+"     PLUGIN CONFIG
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Vundle
+""""""""""""""""""""
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -15,11 +20,7 @@ let mapleader = ' '
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-"
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Required for Vundle
-filetype off
+filetype off " Required for Vundle
 
 " Set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -27,11 +28,12 @@ call vundle#begin()
 
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'python-mode/python-mode'								" Python mode
+Plugin 'scrooloose/nerdtree'										" File browsing
+Plugin 'majutsushi/tagbar'                      " CTag (object structure) bar
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'vim-airline/vim-airline'								" Better statusbar
 " Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching
-Plugin 'python-mode/python-mode'								" Python mode
-Plugin 'scrooloose/nerdtree'										" File browsing
 " Plugin 'scrooloose/syntastic'										" Syntax highlighting
 " Plugin 'tpope/vim-fugitive' 										" Git integration
 
@@ -42,12 +44,25 @@ filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 " filetype plugin on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" PythonMode plugin
+" PythonMode
+""""""""""""""""""""
 let g:pymode_rope = 0
 let g:pymode_folding = 0
 noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
+
+" NERDTree
+""""""""""""""""""""
+nmap <F2> :NERDTreeToggle<CR>
+
+" TagBar
+""""""""""""""""""""
+nmap <F3> :TagbarToggle<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"     GENERAL CONFIG
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " General
 set wildmode=longest,full " Use normal, bash-like tab completion for commands

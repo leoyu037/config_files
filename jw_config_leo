@@ -24,10 +24,6 @@ alias start_jenkins='docker run -p 8080:8080 -p 50000:50000 -v $HOME/jenkinshome
 #
 ##############################################################################
 
-function cicd_get {
-    cicd list-pipelines | jq '.pipelines' | jq "map(select(.service_name == \"$1\"))"
-}
-
 function cicd_get_id {
-    cicd_get $1 | jq '.[0].pipeline_id' | sed 's/\"//g'
+    cicd pipeline list $1 | jq '.pipelines[0].pipeline_id' | sed 's/\"//g'
 }
