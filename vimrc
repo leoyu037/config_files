@@ -48,6 +48,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""
 let g:pymode_rope = 0
 let g:pymode_folding = 0
+let g:pymode_lint_ignore = ['E501', 'E128']
 noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 
 " NERDTree
