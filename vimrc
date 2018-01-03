@@ -53,6 +53,7 @@ noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 
 " NERDTree
 """"""""""""""""""""
+let NERDTreeIgnore = ['\.pyc$', '.cache$[[dir]]', '\.DS_Store$']
 nmap <F2> :NERDTreeToggle<CR>
 
 " TagBar
