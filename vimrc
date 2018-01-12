@@ -48,12 +48,12 @@ filetype plugin indent on    " required
 """"""""""""""""""""
 let g:pymode_rope = 0
 let g:pymode_folding = 0
-let g:pymode_lint_ignore = ['E501', 'E128']
+let g:pymode_lint_ignore = ['E501', 'E128', 'W391']
 noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 
 " NERDTree
 """"""""""""""""""""
-let NERDTreeIgnore = ['\.pyc$', '.cache$[[dir]]', '\.DS_Store$']
+let NERDTreeIgnore = ['\.pyc$', '.cache$[[dir]]', '\.eggs$[[dir]]', '\.idea$[[dir]]', '\.DS_Store$']
 nmap <F2> :NERDTreeToggle<CR>
 
 " TagBar
