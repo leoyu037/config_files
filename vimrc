@@ -49,11 +49,12 @@ filetype plugin indent on    " required
 let g:pymode_rope = 0
 let g:pymode_folding = 0
 let g:pymode_lint_ignore = ['E501', 'E128', 'W391']
+let g:pymode_python = 'python3'
 noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 
 " NERDTree
 """"""""""""""""""""
-let NERDTreeIgnore = ['\.pyc$', '.cache$[[dir]]', '\.eggs$[[dir]]', '\.idea$[[dir]]', '\.DS_Store$']
+let NERDTreeIgnore = ['__pycache__$[[dir]]', '\.pyc$', '.cache$[[dir]]', '\.eggs$[[dir]]', '\.idea$[[dir]]', '\.DS_Store$']
 nmap <F2> :NERDTreeToggle<CR>
 
 " TagBar
@@ -157,7 +158,9 @@ cnoremap help Help
 " Miscellaneous
 set whichwrap+=<,>,h,l,[,] " Cursor wraps to next line
 " Linebreak on 500 characters
-set lbr
+set linebreak
+set breakindent
+set breakindentopt=shift:2
 set textwidth=79
 set formatoptions-=o  " Dont continue comments when pushing o/O
 set clipboard=unnamed " yank and paste with y and p from Vim

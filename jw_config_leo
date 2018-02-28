@@ -6,6 +6,9 @@
 
 export AWS_ACCESS_KEY_ID=PUT_KEY_HERE
 export AWS_SECRET_ACCESS_KEY=PUT_KEY_HERE
+export DOCKER_USERNAME=PUT_KEY_HERE
+export DOCKER_PASSWORD=PUT_KEY_HERE
+export BUILDKITE_AGENT_TOKEN=PUT_KEY_HERE
 
 ##############################################################################
 #
