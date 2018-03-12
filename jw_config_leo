@@ -30,3 +30,12 @@ alias start_jenkins='docker run -p 8080:8080 -p 50000:50000 -v $HOME/jenkinshome
 function cicd_get_id {
     cicd pipeline list $1 | jq '.pipelines[0].pipeline_id' | sed 's/\"//g'
 }
+
+##############################################################################
+#
+#				LOAD CONFIGS
+#
+##############################################################################
+
+# Load pip config
+[ -f ~/.pip/pip.conf ] && echo "Loading pip config" && cp ${HOME}/config_files/jw.pip.conf ${HOME}/.pip/pip.conf
