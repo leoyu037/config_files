@@ -55,6 +55,10 @@ noremap <leader>l :PymodeLintToggle<cr>    " Toggle Python linting
 " NERDTree
 """"""""""""""""""""
 let NERDTreeIgnore = ['__pycache__$[[dir]]', '\.pyc$', '.cache$[[dir]]', '\.eggs$[[dir]]', '\.idea$[[dir]]', '\.DS_Store$']
+let NERDTreeChDirMode = 2
+let NERDTreeNaturalSort = 1
+let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
 nmap <F2> :NERDTreeToggle<CR>
 
 " TagBar
