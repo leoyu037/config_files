@@ -76,7 +76,7 @@ function venv {
 # New virtualenv
 function nvenv {
     echo Creating/activating new virtualenv $1
-    virtualenv $1
+    virtualenv -p python2.7 $1
     venv $1
 }
 
