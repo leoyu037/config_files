@@ -31,6 +31,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'python-mode/python-mode'								" Python mode
 Plugin 'scrooloose/nerdtree'										" File browsing
 Plugin 'majutsushi/tagbar'                      " CTag (object structure) bar
+Plugin 'christoomey/vim-tmux-navigator'
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'vim-airline/vim-airline'								" Better statusbar
 " Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching

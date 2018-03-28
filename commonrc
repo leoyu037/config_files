@@ -25,7 +25,8 @@ alias doserver='ssh root@45.55.170.64'
 
 # Docker
 alias dockerclean='docker rm `docker ps -aq`'
-alias dockercleanimages='docker rmi `docker images | grep "<none>" | awk "{print $3}"`'
+# alias dockercleanimages='docker rmi `docker images | grep "<none>" | awk "{print $3}"`'
+alias dockercleanimages='docker rmi `docker images -f "dangling=true" -q`'
 
 # Java
 alias javaclean='rm *.class'
