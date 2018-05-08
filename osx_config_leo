@@ -1,6 +1,6 @@
 # Node version manager
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+# export NVM_DIR="$HOME/.nvm"
+# . "/usr/local/opt/nvm/nvm.sh"
 
 ##############################################################################
 #
@@ -9,7 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 ##############################################################################
 
 # Application aliases
-alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
+# alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
 
 # Use Exuberant CTags instead of default
 alias ctags='`brew --prefix`/bin/ctags'
