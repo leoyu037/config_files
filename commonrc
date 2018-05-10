@@ -15,8 +15,8 @@
 
 # General
 alias findfile='find . -name'
-alias ls='ls -lhGp --group-directories-first' # Linux
-# alias ls='ls -lhGp' # OSX
+# alias ls='ls -lhGp --group-directories-first' # Linux
+alias ls='ls -lhGp' # OSX
 alias resethosts='mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak'
 alias tmux='tmux -2'
 
