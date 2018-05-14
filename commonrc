@@ -102,3 +102,6 @@ function nvenv3 {
 
 # Load JW Player config
 [ -f ~/.jw_config_leo ] && echo "Loading JW Config" && source ${HOME}/.jw_config_leo
+
+# Load Compass config
+[ -f ~/.compass_config_leo ] && echo "Loading Compass Config" && source ${HOME}/.compass_config_leo
