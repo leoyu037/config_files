@@ -14,8 +14,11 @@
 [grep]
   lineNumber = true
 
-[user]
-  name = Leo Yu
+[pager]
+  branch = false
 
 [push]
   default = simple
+
+[user]
+  name = Leo Yu
