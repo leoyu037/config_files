@@ -14,10 +14,8 @@
 	<integer>1</integer>
 	<key>AppleWindowTabbingMode</key>
 	<string>manual</string>
-	<key>CheckTestRelease</key>
-	<true/>
 	<key>Default Bookmark Guid</key>
-	<string>9E8C197D-9869-45F5-8A2F-DCD0A781346C</string>
+	<string>16AD62AA-305C-49B2-8BE9-9D9EA6EAF3F8</string>
 	<key>Hotkey</key>
 	<true/>
 	<key>HotkeyChar</key>
@@ -31,7 +29,7 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Documents/config_files/iterm</string>
+	<string>~/config_files/iterm</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -66,7 +64,9 @@
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>898 1423 928 394 502 1050 1920 1057 </string>
+	<string>693 530 796 473 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>1278 1080 570 452 736 1050 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -360,7 +360,7 @@
 				<real>0.51372549019607838</real>
 			</dict>
 			<key>Guid</key>
-			<string>9E8C197D-9869-45F5-8A2F-DCD0A781346C</string>
+			<string>16AD62AA-305C-49B2-8BE9-9D9EA6EAF3F8</string>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>Idle Code</key>
@@ -749,13 +749,15 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>8F1D50B8-E047-47FD-897B-99808D2C9F7E</string>
+	<string>EADC149C-5A29-462A-84B8-5962E220B78F</string>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncSuppressMissingProfileInArrangementWarning</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>547485434.36290705</real>
+	<real>548009630.35242295</real>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -790,13 +792,19 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/leo.yu/Documents/config_files/iterm</string>
+	<string>/Users/leo.yu/config_files/iterm</string>
+	<key>SUEnableAutomaticChecks</key>
+	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing.xml?shard=62</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=43</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
+	<key>SULastCheckTime</key>
+	<date>2018-05-16T14:55:36Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
 	<key>WordCharacters</key>
