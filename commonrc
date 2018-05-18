@@ -94,6 +94,10 @@ function nvenv3 {
 #
 ##############################################################################
 
+# Source virtualenvwrapper if installed
+[ `command -v virtualenvwrapper.sh` ] && echo "Initializing virtualenvwrapper" \
+  && source `command -v virtualenvwrapper.sh`
+
 # Load OSX config
 [ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
 
