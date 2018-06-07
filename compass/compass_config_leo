@@ -23,8 +23,10 @@ alias ecrlogin='`aws ecr get-login --no-include-email`'
 
 function awsuc {
   export AWS_PROFILE=default
+  ecrlogin
 }
 
 function awsff {
   export AWS_PROFILE=ff
+  ecrlogin
 }
