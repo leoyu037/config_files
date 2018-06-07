@@ -65,10 +65,17 @@
 	</data>
 	<key>NSTableView Supports v2 KeyBingingTable</key>
 	<true/>
+	<key>NSToolbar Configuration com.apple.NSColorPanel</key>
+	<dict>
+		<key>TB Is Shown</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>1005 1026 606 469 736 900 1920 1057 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>272 326 796 473 0 0 1680 1027 </string>
+	<string>220 466 928 394 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>899 382 570 452 0 0 1680 1027 </string>
+	<string>736 900 1920 1080 736 900 1920 1057 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -257,13 +264,13 @@
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.21176470588235294</real>
+				<real>0.8901960784313725</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.16862745098039217</real>
+				<real>0.96470588235294119</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.99215686274509807</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -287,13 +294,13 @@
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.63137254901960782</real>
+				<real>0.45882352941176469</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.63137254901960782</real>
+				<real>0.43137254901960786</real>
 				<key>Red Component</key>
-				<real>0.57647058823529407</real>
+				<real>0.34509803921568627</real>
 			</dict>
 			<key>Character Encoding</key>
 			<integer>4</integer>
@@ -306,13 +313,13 @@
 			<key>Cursor Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.58823529411764708</real>
+				<real>0.51372549019607838</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039215686274515</real>
+				<real>0.4823529411764706</real>
 				<key>Red Component</key>
-				<real>0.51372549019607838</real>
+				<real>0.396078431372549</real>
 			</dict>
 			<key>Cursor Guide Color</key>
 			<dict>
@@ -330,13 +337,13 @@
 			<key>Cursor Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.25882352941176473</real>
+				<real>0.83529411764705885</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.21176470588235294</real>
+				<real>0.90980392156862744</real>
 				<key>Red Component</key>
-				<real>0.027450980392156862</real>
+				<real>0.93333333333333335</real>
 			</dict>
 			<key>Custom Command</key>
 			<string>No</string>
@@ -353,13 +360,13 @@
 			<key>Foreground Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.58823529411764708</real>
+				<real>0.51372549019607838</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.58039215686274515</real>
+				<real>0.4823529411764706</real>
 				<key>Red Component</key>
-				<real>0.51372549019607838</real>
+				<real>0.396078431372549</real>
 			</dict>
 			<key>Guid</key>
 			<string>9E8C197D-9869-45F5-8A2F-DCD0A781346C</string>
@@ -695,24 +702,24 @@
 			<key>Selected Text Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.63137254901960782</real>
+				<real>0.45882352941176469</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.63137254901960782</real>
+				<real>0.43137254901960786</real>
 				<key>Red Component</key>
-				<real>0.57647058823529407</real>
+				<real>0.34509803921568627</real>
 			</dict>
 			<key>Selection Color</key>
 			<dict>
 				<key>Blue Component</key>
-				<real>0.25882352941176473</real>
+				<real>0.83529411764705885</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.21176470588235294</real>
+				<real>0.90980392156862744</real>
 				<key>Red Component</key>
-				<real>0.027450980392156862</real>
+				<real>0.93333333333333335</real>
 			</dict>
 			<key>Send Code When Idle</key>
 			<false/>
@@ -752,12 +759,29 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>EADC149C-5A29-462A-84B8-5962E220B78F</string>
+	<key>NoSyncLastTipTime</key>
+	<real>549472575.33908403</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>548009630.35242295</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+	</array>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -802,8 +826,10 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-16T15:18:25Z</date>
+	<date>2018-05-30T22:11:15Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>UseLionStyleFullscreen</key>
 	<false/>
