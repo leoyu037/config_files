@@ -1,4 +1,3 @@
-" Use Vim settings, rather then Vi settings. This must be
 " first, because it changes other options as a side effect.
 set nocompatible
 
@@ -35,6 +34,7 @@ Plugin 'christoomey/vim-tmux-navigator'         " Seamless vim/tmux pane switchi
 Plugin 'Konfekt/FastFold'                       " Faster folding engine
 Plugin 'tmhedberg/SimpylFold'                   " Python folding
 Plugin 'pedrohdz/vim-yaml-folds'                " Yaml folding
+Plugin 'nathanaelkane/vim-indent-guides'        " Indent guides
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'vim-airline/vim-airline'								" Better statusbar
 " Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching
@@ -73,6 +73,17 @@ nmap <F3> :TagbarToggle<CR>
 """"""""""""""""""""
 let g:SimpylFold_docstring_preview = 1
 
+" Indent Guides
+""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+function! IndentEvenCtermBgColor()
+  return (&g:background == 'dark') ? 'black' : 'lightgrey'
+endfunction
+autocmd Colorscheme * :exe 'hi IndentGuidesEven ctermbg=' . IndentEvenCtermBgColor()
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
@@ -103,8 +114,8 @@ set novisualbell
 set mouse=a
 
 " Display related
-syntax on             " Syntax highlighting
-set t_Co=256          " Use 256 colors
+syntax on                 " Syntax highlighting
+set t_Co=256              " Use 256 colors
 set background=dark
 au ColorScheme * hi ExtraWhitespace ctermbg=Red guibg=Red
 colorscheme solarized
@@ -138,10 +149,10 @@ endif
 :set guioptions-=L  "remove left-hand scroll bar
 
 " Search
-set hlsearch   " Highlight search results
-set incsearch  " Search as you type
-set ignorecase " Ignore case when searching
-set smartcase  " Try to be smart about cases
+set hlsearch              " Highlight search results
+set incsearch             " Search as you type
+set ignorecase            " Ignore case when searching
+set smartcase             " Try to be smart about cases
 map <leader><cr> :noh<cr> " Disable highlight when <leader><cr> is pressed
 
 " Tabs
@@ -157,6 +168,7 @@ set smartindent  " I dunno the difference between this and smarttab
 set foldmethod=syntax
 set foldlevelstart=1
 set foldnestmax=2
+hi Folded term=NONE cterm=NONE
 
 " Key remapping
 noremap <leader>m :call ToggleMouse()<cr>               " Mouse toggle
