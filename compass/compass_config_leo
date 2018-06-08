@@ -30,3 +30,10 @@ function awsff {
   export AWS_PROFILE=ff
   ecrlogin
 }
+
+function dockercleanimagescompass {
+  echo Removing quay.io tags
+  docker rmi "$@" `docker images | grep 'quay.io' | awk '{ print $3 }'`
+  echo Removing ecr tags
+  docker rmi "$@" `docker images | grep 'dkr.ecr' | awk '{ print $3 }'`
+}
