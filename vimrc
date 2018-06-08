@@ -30,8 +30,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'python-mode/python-mode'								" Python mode
 Plugin 'scrooloose/nerdtree'										" File browsing
-Plugin 'majutsushi/tagbar'                      " CTag (object structure) bar
-Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'majutsushi/tagbar'                      " Code structure display
+Plugin 'christoomey/vim-tmux-navigator'         " Seamless vim/tmux pane switching
 Plugin 'Konfekt/FastFold'                       " Faster folding engine
 Plugin 'tmhedberg/SimpylFold'                   " Python folding
 Plugin 'pedrohdz/vim-yaml-folds'                " Yaml folding
@@ -154,37 +154,40 @@ set autoindent
 set smartindent  " I dunno the difference between this and smarttab
 
 " Code folding
-set foldmethod=indent
+set foldmethod=syntax
 set foldlevelstart=1
 set foldnestmax=2
 
 " Key remapping
-set backspace=eol,start,indent               " Fixes backspace in insert mode
-noremap <leader>m :call ToggleMouse()<cr>    " Mouse toggle
-noremap <leader>p :setlocal paste!<cr>       " Paste mode toggle
-noremap <leader>n :set relativenumber!<cr>   " Relative line numbering toggle
-noremap <leader>t :call ToggleTextWrap()<cr> " Text wrap toggle
-noremap <leader>w :set wrap!<cr>             " Word wrap toggle
-nnoremap <leader><leader> za                 " Enable code folding
-nnoremap <c-j> <c-w>j                        " Navigate panes easier
+noremap <leader>m :call ToggleMouse()<cr>               " Mouse toggle
+noremap <leader>p :setlocal paste!<cr>                  " Paste mode toggle
+noremap <leader>n :set relativenumber!<cr>              " Relative line numbering toggle
+noremap <leader>t :call ToggleTextWrap()<cr>            " Text wrap toggle
+noremap <leader>w :set wrap!<cr>                        " Word wrap toggle
+nnoremap <leader><leader> za                            " Enable code folding
+nnoremap <c-j> <c-w>j                                   " Navigate panes easier
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-vmap <leader>y "+y                           " Easy copy to system clipboard
+nnoremap <leader><left> :exe "vertical resize -10"<CR>  " Make pane thinner
+nnoremap <leader><right> :exe "vertical resize +10"<CR> " Make pane thicker
+nnoremap <leader><up> :exe "resize -10"<CR>             " Make pane shorter
+nnoremap <leader><down> :exe "resize +10"<CR>           " Make pane taller
+vmap <leader>y "+y                                      " Easy copy to system clipboard
 
 " Vertical split help
 command -nargs=* -complete=help Help vertical belowright help <args>
 cnoremap help Help
 
 " Miscellaneous
-set whichwrap+=<,>,h,l,[,] " Cursor wraps to next line
-" Linebreak on 500 characters
-set linebreak
+set backspace=eol,start,indent " Fix backspace in insert mode
+set whichwrap+=<,>,h,l,[,]     " Cursor wraps to next line
+set linebreak                  " Linebreak on 500 chars
 set breakindent
 set breakindentopt=shift:2
-set textwidth=79
-set formatoptions-=o  " Dont continue comments when pushing o/O
-set clipboard=unnamed " yank and paste with y and p from Vim
+set textwidth=80
+set formatoptions-=o           " Dont continue comments when pushing o/O
+set clipboard=unnamed          " Yank and paste with y and p from Vim
 set splitbelow
 set splitright
 
