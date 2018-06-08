@@ -32,6 +32,9 @@ Plugin 'python-mode/python-mode'								" Python mode
 Plugin 'scrooloose/nerdtree'										" File browsing
 Plugin 'majutsushi/tagbar'                      " CTag (object structure) bar
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'Konfekt/FastFold'                       " Faster folding engine
+Plugin 'tmhedberg/SimpylFold'                   " Python folding
+Plugin 'pedrohdz/vim-yaml-folds'                " Yaml folding
 " Plugin 'git://git.wincent.com/command-t.git'
 " Plugin 'vim-airline/vim-airline'								" Better statusbar
 " Plugin 'ctrlpvim/ctrlp.vim'											" Fuzzy file searching
@@ -66,6 +69,20 @@ nmap <F2> :NERDTreeToggle<CR>
 """"""""""""""""""""
 nmap <F3> :TagbarToggle<CR>
 
+" SimpylFold
+""""""""""""""""""""
+let g:SimpylFold_docstring_preview = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"     LANGUAGE-SPECIFIC CONFIG
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Yaml
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
 "     GENERAL CONFIG
@@ -93,10 +110,10 @@ au ColorScheme * hi ExtraWhitespace ctermbg=Red guibg=Red
 colorscheme solarized
 call togglebg#map("<F5>") " Toggle bg color
 set scrolloff=7           " Offset of cursor when scrolling
-"   Line numbers
+""" Line numbers
 set number                " Show line numbers
 set numberwidth=4         " Use four characters
-"   Status/command bar
+""" Status/command bar
 set laststatus=2          " Always have status bar
 set cmdheight=1           " Height of command bar
 set ruler                 " Display cursor position
@@ -104,7 +121,7 @@ set statusline=\ %{HasPaste()}%F%(\ [%M%R%H%W]%)\ \ Line:\ %l\.%v
 hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
 au InsertEnter * hi statusline ctermbg=White ctermfg=Red guibg=#cb4b16 guifg=White
 au InsertLeave * hi statusline ctermbg=White ctermfg=DarkGreen guibg=#859900 guifg=White
-"   Fonts
+""" Fonts
 if has("gui_running")
   if has("gui_gtk2")
     set guifont=Inconsolata\ 12
@@ -114,7 +131,7 @@ if has("gui_running")
     set guifont=Consolas:h10:cANSI
   endif
 endif
-"   GUI Options
+""" GUI Options
 " :set guioptions-=m  "remove menu bar
 :set guioptions-=T  "remove toolbar
 :set guioptions-=r  "remove right-hand scroll bar
@@ -138,12 +155,11 @@ set smartindent  " I dunno the difference between this and smarttab
 
 " Code folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevelstart=1
+set foldnestmax=2
 
 " Key remapping
 set backspace=eol,start,indent               " Fixes backspace in insert mode
-" noremap j 3j                                 " Jump by 5 lines instead of 1
-" noremap k 5k
 noremap <leader>m :call ToggleMouse()<cr>    " Mouse toggle
 noremap <leader>p :setlocal paste!<cr>       " Paste mode toggle
 noremap <leader>n :set relativenumber!<cr>   " Relative line numbering toggle
@@ -183,7 +199,12 @@ au VimResized * :wincmd =
 au BufWinEnter * match ExtraWhitespace /\s\+$/
 nnoremap <silent> <F6> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
-" Helper Functions
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"     HELPER FUNCTIONS
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Returns true if paste mode is enabled
 function! HasPaste()
     if &paste
