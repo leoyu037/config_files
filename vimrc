@@ -166,13 +166,17 @@ noremap <leader>t :call ToggleTextWrap()<cr>            " Text wrap toggle
 noremap <leader>w :set wrap!<cr>                        " Word wrap toggle
 nnoremap <leader><leader> za                            " Enable code folding
 nnoremap <c-j> <c-w>j                                   " Navigate panes easier
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
+nnoremap <c-k> <c-w>k                                   " Navigate panes easier
+nnoremap <c-h> <c-w>h                                   " Navigate panes easier
+nnoremap <c-l> <c-w>l                                   " Navigate panes easier
+nnoremap <left> <nop>                                   " Disable arrow keys
+nnoremap <right> <nop>                                  " Disable arrow keys
+nnoremap <up> <nop>                                     " Disable arrow keys
+nnoremap <down> <nop>                                   " Disable arrow keys
 nnoremap <leader><left> :exe "vertical resize -10"<CR>  " Make pane thinner
 nnoremap <leader><right> :exe "vertical resize +10"<CR> " Make pane thicker
-nnoremap <leader><up> :exe "resize -10"<CR>             " Make pane shorter
-nnoremap <leader><down> :exe "resize +10"<CR>           " Make pane taller
+nnoremap <leader><down> :exe "resize -10"<CR>           " Make pane shorter
+nnoremap <leader><up> :exe "resize +10"<CR>             " Make pane taller
 vmap <leader>y "+y                                      " Easy copy to system clipboard
 
 " Vertical split help
