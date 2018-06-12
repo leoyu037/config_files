@@ -27,8 +27,8 @@ call vundle#begin()
 
 " Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'python-mode/python-mode'								" Python mode
-Plugin 'scrooloose/nerdtree'										" File browsing
+Plugin 'python-mode/python-mode'                " Python mode
+Plugin 'scrooloose/nerdtree'                    " File browsing
 Plugin 'majutsushi/tagbar'                      " Code structure display
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless vim/tmux pane switching
 Plugin 'Konfekt/FastFold'                       " Faster folding engine
@@ -64,6 +64,8 @@ let NERDTreeNaturalSort = 1
 let NERDTreeShowBookmarks = 1
 let NERDTreeShowHidden = 1
 nmap <F2> :NERDTreeToggle<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * if argc() | wincmd p | endif
 
 " TagBar
 """"""""""""""""""""
@@ -79,10 +81,11 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-function! IndentEvenCtermBgColor()
+function! IndentCtermBgColor()
   return (&g:background == 'dark') ? 'black' : 'lightgrey'
 endfunction
-autocmd Colorscheme * :exe 'hi IndentGuidesEven ctermbg=' . IndentEvenCtermBgColor()
+autocmd Colorscheme * :exe 'hi IndentGuidesOdd ctermbg=' . IndentCtermBgColor()
+autocmd Colorscheme * :exe 'hi IndentGuidesEven ctermbg=' . IndentCtermBgColor()
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
