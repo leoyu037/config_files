@@ -17,7 +17,10 @@ if [ ! -d "~/.tmp/" ]; then
   mkdir ~/.tmp/
 fi
 
+# Tmux
+cp tmux.conf ~/.tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo Configuring other stuff...
 cp gitconfig ~/.gitconfig
-cp tmux.conf ~/.tmux.conf
 
