@@ -12,10 +12,11 @@ export UPDATE_ZSH_DAYS=14
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_THEME="robbyrussell"
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 plugins=(git docker)
 
 source $ZSH/oh-my-zsh.sh
+compinit
 
 ##############################################################################
 #

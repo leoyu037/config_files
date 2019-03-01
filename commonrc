@@ -26,7 +26,12 @@ alias doserver='ssh root@45.55.170.64'
 # Docker
 alias dockerclean='docker rm `docker ps -aq`'
 # alias dockercleanimages='docker rmi `docker images | grep "<none>" | awk "{print $3}"`'
-alias dockercleanimages='docker rmi `docker images -f "dangling=true" -q`'
+# alias dockercleanimages='docker rmi `docker images -f "dangling=true" -q`'
+alias dockercleanimages='docker image prune'
+alias dc='docker-compose'
+
+# Kubernetes
+alias k='kubectl'
 
 # Java
 alias javaclean='rm *.class'
@@ -66,7 +71,10 @@ function docker_attach {
 
 function pyclean {
   find $1 -name "*.pyc" | xargs rm
-  find . -name "__pycache__" | xargs rmdir
+  find $1 -name "__pycache__" | xargs rm -r
+  find $1 -name "*.egg-info" | xargs rm -r
+  find $1 -name "build" | xargs rm -r
+  find $1 -name "dist" | xargs rm -r
 }
 
 # Activate virtualenv
@@ -81,7 +89,7 @@ function nvenv {
     venv $1
 }
 
-# New virtualenv
+# New python 3 virtualenv
 function nvenv3 {
     echo Creating/activating new virtualenv $1
     virtualenv -p python3 $1
