@@ -13,6 +13,7 @@
 
 # Use Exuberant CTags instead of default
 alias ctags='`brew --prefix`/bin/ctags'
+alias tsm='transmission-remote'
 
 ##############################################################################
 #
