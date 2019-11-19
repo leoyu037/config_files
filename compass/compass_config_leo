@@ -6,6 +6,7 @@
 
 # For virtualenvwrapper
 export PROJECT_HOME="~/development"
+export GITHUB_PASS=
 
 ##############################################################################
 #
@@ -28,6 +29,11 @@ function awsuc {
 
 function awsff {
   export AWS_PROFILE=ff
+  ecrlogin
+}
+
+function awsbe {
+  export AWS_PROFILE=be
   ecrlogin
 }
 
