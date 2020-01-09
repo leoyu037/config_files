@@ -85,14 +85,14 @@ function venv {
 }
 
 # New virtualenv
-function nvenv {
+function nvenv2 {
     echo Creating/activating new virtualenv $1
     virtualenv -p python2.7 $1
     venv $1
 }
 
 # New python 3 virtualenv
-function nvenv3 {
+function nvenv {
     echo Creating/activating new virtualenv $1
     virtualenv -p python3 $1
     venv $1
