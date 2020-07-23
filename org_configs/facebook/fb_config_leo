@@ -7,3 +7,25 @@
 export EDITOR=vim
 export HISTSIZE=130000
 export SAVEHIST=130000
+export LC_CTYPE="en_US.UTF-8"
+
+##############################################################################
+#
+#				ALIASES
+#
+##############################################################################
+
+alias mosh='mosh -6'
+
+##############################################################################
+#
+#				SCRIPTS
+#
+##############################################################################
+
+# Prompt
+if [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
+  source /opt/facebook/hg/share/scm-prompt.sh
+fi
+export PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}
+  $(_scm_prompt) %{$fg_bold[red]%}➜%{$reset_color%}  '
