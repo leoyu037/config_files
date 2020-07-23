@@ -119,3 +119,6 @@ function nvenv {
 
 # Load Compass config
 [ -f ~/.compass_config_leo ] && echo "Loading Compass Config" && source ${HOME}/.compass_config_leo
+
+# Load FB config
+[ -f ~/.fb_config_leo ] && echo "Loading Facebook Config" && source ${HOME}/.fb_config_leo
