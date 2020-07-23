@@ -51,9 +51,14 @@ function collapse_pwd {
 ##############################################################################
 
 # Prompt
+local user='%{$fg[magenta]%}%n%{$reset_color%}'
+local host='%{$fg[yellow]%}%m%{$reset_color%}'
+local directory='%{$fg[green]%}$(collapse_pwd)%{$reset_color%}'
+local git_status='$(git_prompt_info)'
+local arrow='%{$fg_bold[red]%}➜%{$reset_color%}'
 local ret_status="%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )"
-PROMPT='%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}
-  $(git_prompt_info)%{$fg_bold[red]%}➜%{$reset_color%}  '
+export PROMPT="$user at $host in $directory
+  $git_status$arrow  "
 
 ##############################################################################
 #
