@@ -26,6 +26,10 @@ alias mosh='mosh -6'
 # Prompt
 if [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
   source /opt/facebook/hg/share/scm-prompt.sh
+else
+  function _scm_prompt {
+    echo ''
+  }
 fi
 
 local user='%{$fg[magenta]%}%n%{$reset_color%}'
