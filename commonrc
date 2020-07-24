@@ -17,8 +17,6 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # General
 alias findfile='find . -name'
-# alias ls='ls -lhGp --group-directories-first' # Linux
-alias ls='ls -lhGp' # OSX
 alias resethosts='mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak'
 alias tmux='tmux -2'
 
@@ -110,6 +108,9 @@ function nvenv {
 
 # Load OSX config
 [ -f ~/.osx_config_leo ] && echo "Loading OSX config" && source ${HOME}/.osx_config_leo
+
+# Load Linux config
+[ -f ~/.linux_config_leo ] && echo "Loading Linux config" && source ${HOME}/.linux_config_leo
 
 # Load CERN/CMS config
 [ -f ~/.cms_config_leo ] && echo "Loading CMS config" && source ${HOME}/.cms_config_leo

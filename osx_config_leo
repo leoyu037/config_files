@@ -8,6 +8,8 @@
 #
 ##############################################################################
 
+alias ls='ls -lhGp'
+
 # Application aliases
 # alias sublime='open -a /Applications/Sublime\ Text\ 2.app'
 
