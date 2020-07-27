@@ -26,22 +26,27 @@ alias mosh='mosh -6'
 # Prompt
 if [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
   source /opt/facebook/hg/share/scm-prompt.sh
+elif [ -f /usr/share/scm/scm-prompt.sh ]; then
+  source /usr/share/scm/scm-prompt.sh
 else
   function _scm_prompt {
     echo ''
   }
 fi
 
+function _scm_status {
+  if [ -z "`git_prompt_info`" ]; then
+    echo "%{$fg_bold[magenta]%}$(_scm_prompt)%{$reset_color%}"
+  else
+    echo "$(git_prompt_info)"
+  fi
+}
+
 local user='%{$fg[magenta]%}%n%{$reset_color%}'
 local host='%{$fg[yellow]%}%m%{$reset_color%}'
 local directory='%{$fg[green]%}$(collapse_pwd)%{$reset_color%}'
 local arrow='%{$fg_bold[red]%}➜%{$reset_color%}'
-
-if [ -z "$(git_prompt_info)" ]; then
-  local git_status='%{$fg_bold[magenta]%}$(_scm_prompt)%{$reset_color%}'
-else
-  local git_status='$(git_prompt_info)'
-fi
+local scm_status='$(_scm_status)'
 
 export PROMPT="$user at $host in $directory
-  $git_status $arrow  "
+  $scm_status $arrow  "
