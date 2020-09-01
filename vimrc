@@ -170,7 +170,7 @@ set smartindent  " I dunno the difference between this and smarttab
 " Code folding
 set foldmethod=syntax
 set foldlevelstart=1
-set foldnestmax=2
+set foldnestmax=1
 hi Folded term=NONE cterm=NONE
 
 " Key remapping
