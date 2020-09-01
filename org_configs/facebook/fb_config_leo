@@ -1,3 +1,4 @@
+
 ##############################################################################
 #
 #				ENVIRONMENTAL VARIABLES
@@ -50,3 +51,7 @@ local scm_status='$(_scm_status)'
 
 export PROMPT="$user at $host in $directory
   $scm_status $arrow  "
+
+# Pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
