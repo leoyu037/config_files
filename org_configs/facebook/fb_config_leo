@@ -10,6 +10,10 @@ export HISTSIZE=130000
 export SAVEHIST=130000
 export LC_CTYPE="en_US.UTF-8"
 
+# Master RC
+export LOCAL_ADMIN_SCRIPTS=/usr/facebook/ops/rc
+export FB_NO_ALIASES=true
+
 ##############################################################################
 #
 #				ALIASES
@@ -23,6 +27,9 @@ alias mosh='mosh -6'
 #				SCRIPTS
 #
 ##############################################################################
+
+# Load master FB zshrc
+source "$LOCAL_ADMIN_SCRIPTS/master.zshrc"
 
 # Prompt
 if [ -f /opt/facebook/hg/share/scm-prompt.sh ]; then
@@ -52,4 +59,3 @@ local scm_status='$(_scm_status)'
 export PROMPT="$user at $host in $directory
   $scm_status $arrow  "
 
-source /usr/facebook/ops/rc/master.zshrc
