@@ -16,7 +16,7 @@ export PYTHONDONTWRITEBYTECODE=1
 ##############################################################################
 
 # General
-alias findfile='find . -name'
+alias findfile='find . -type f -name'
 alias resethosts='mv ~/.ssh/known_hosts ~/.ssh/known_hosts.bak'
 alias tmux='tmux -2'
 
@@ -49,9 +49,10 @@ alias pypath='export PYTHONPATH=$(pwd)'
 
 function findinfile {
     if [[ ($# -lt 1) || ($1 = '-h') ]]; then
-      echo 'usage: findinfile [-h]|[<file_pattern> <target_string>]'
+      echo 'usage: findinfile [-h]|[<file_pattern> <target_regex>]'
     else
-      grep --include=$1 -rn . -e $2
+      # grep --include=$1 -rn . -e $2
+      find . -name $1 -type f | xargs grep -e $2
     fi
 }
 
