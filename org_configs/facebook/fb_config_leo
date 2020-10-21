@@ -14,6 +14,14 @@ export LC_CTYPE="en_US.UTF-8"
 export LOCAL_ADMIN_SCRIPTS=/usr/facebook/ops/rc
 export FB_NO_ALIASES=true
 
+# Go
+# https://www.internalfb.com/intern/wiki/Go/devserver-setup/#set-up-the-go-binary-usi
+export GOPATH="/data/users/leoyu/gopaths/gobuck:/data/users/leoyu/gopaths/godeps:/data/users/leoyu/gopaths/gofbcode"
+export GOROOT="/data/users/leoyu/gopaths/goroot"
+export PATH="/data/users/leoyu/gopaths/gobuck/bin:$PATH"
+export PATH="/data/users/leoyu/gopaths/go-tools/bin:$PATH"
+export PATH="/data/users/leoyu/gopaths/goroot/bin:$PATH"
+
 ##############################################################################
 #
 #				ALIASES
