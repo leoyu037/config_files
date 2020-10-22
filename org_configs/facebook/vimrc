@@ -29,6 +29,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'python-mode/python-mode'                " Python mode
 Plugin 'fatih/vim-go'                           " Go plugin
+Plugin 'solarnz/thrift.vim'                     " Thrift syntax highlighting
 Plugin 'scrooloose/nerdtree'                    " File browsing
 Plugin 'majutsushi/tagbar'                      " Code structure display
 Plugin 'christoomey/vim-tmux-navigator'         " Seamless vim/tmux pane switching
@@ -101,6 +102,17 @@ let g:tagbar_type_go = {
   \ },
   \ 'ctagsbin'  : 'gotags',
   \ 'ctagsargs' : '-sort -silent'
+\ }
+let g:tagbar_type_thrift = {
+  \ 'ctagstype' : 'thrift',
+  \ 'kinds'     : [
+    \ 'u:union:0:1',
+    \ 'v:service:0:1',
+    \ 'e:enum:0:1',
+    \ 's:struct:0:1',
+    \ 'f:function:0:1',
+  \ ],
+  \ 'sro' : '.'
 \ }
 
 " SimpylFold

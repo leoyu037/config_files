@@ -1,3 +1,6 @@
+REPO_ROOT="`git rev-parse --show-toplevel`"
+pushd "$REPO_ROOT"
+
 # Install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -28,3 +31,4 @@ echo Configuring other stuff...
 cp gitconfig ~/.gitconfig
 
 source ~/.zshrc
+popd
